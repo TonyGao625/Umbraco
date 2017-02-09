@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Contact>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "CustomMaster.cshtml";
+}
+
+<div class="container">
+    @if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+    {
+        <p>Your message was sent successfully</p>
+    }
+    else
+    {
+        Html.RenderAction("RenderForm", "ContactSurface");
+    }
+</div>

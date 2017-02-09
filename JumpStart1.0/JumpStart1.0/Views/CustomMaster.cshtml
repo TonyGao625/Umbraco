@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Bootstrap 101 Template</title>
+<title>Customer Order Mockup</title>
 <!-- Bootstrap -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -21,8 +21,29 @@
 <!&#91;endif&#93;-->
 </head>
 <body>
-<h1>Hello, world!</h1>
-@RenderBody();
+
+    <div class="container">
+        
+        @Html.Partial("Header")
+        @RenderBody()
+        <div class="container" style="border-top: 2px solid grey;margin-top:80px">
+            <div class="row">
+                <div class="12u">
+                    <!-- Contact -->
+                    <section>
+                        <h2 class="major"><span>Get in touch</span></h2>
+                        <ul class="contact">
+                            <li><a href="http://facebook.com/Umbraco" class="facebook">Facebook</a></li>
+                            <li><a href="http://twitter.com/UmbracoProject" class="twitter">Twitter</a></li>
+                            <li><a href="http://feeds.feedburner.com/umbracoblog" class="rss">RSS</a></li>
+                            <li><a href="https://google.com/+Umbraco" class="googleplus">Google+</a></li>
+                        </ul>
+                    </section>
+                    <!-- /Contact -->
+                </div>
+            </div>
+        </div>
+    </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.12.4%2Fjquery.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
 <!-- Include all compiled plugins (below), or include individual files as needed -->
