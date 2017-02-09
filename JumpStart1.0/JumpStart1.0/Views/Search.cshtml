@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "umbLayout.cshtml";
+}
+<div class='container'>
+<form action="/search/" method="GET">
+        <input type="text" placeholder="Search..." name="query">
+        <button>Search</button>
+    </form>
+	
+	@{
+        var searchQuery = Request.QueryString["query"];
+    
+        if (!string.IsNullOrEmpty(searchQuery))    
+        {
+            <div class="searchresults">
+                <p>Your search results for <strong>@searchQuery</strong></p>
+                <ul>
+                    @foreach (var result in Umbraco.Search(searchQuery))
+                    {
+                        <li>
+                            <a href="@result.Url">@result.Name</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+         }
+    }
+
+</div>
