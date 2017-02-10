@@ -1,76 +1,50 @@
-﻿ 2017-02-09 09:48:41,646 [P17080/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.9 application starting on HUWEI-PC
- 2017-02-09 09:48:41,736 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2017-02-09 09:48:41,746 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 10ms)
- 2017-02-09 09:48:41,810 [P17080/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
- 2017-02-09 09:48:41,819 [P17080/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
- 2017-02-09 09:48:41,826 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
- 2017-02-09 09:48:42,064 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 238ms)
- 2017-02-09 09:48:42,207 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2017-02-09 09:48:42,208 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
- 2017-02-09 09:48:42,208 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2017-02-09 09:48:42,210 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 1ms)
- 2017-02-09 09:48:42,224 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
- 2017-02-09 09:48:42,226 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
- 2017-02-09 09:48:42,227 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
- 2017-02-09 09:48:42,254 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 27ms)
- 2017-02-09 09:48:42,508 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
- 2017-02-09 09:48:42,509 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 1ms)
- 2017-02-09 09:48:42,510 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
- 2017-02-09 09:48:42,510 [P17080/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
- 2017-02-09 09:48:44,499 [P17080/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2017-02-09 09:48:45,124 [P17080/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
- 2017-02-09 09:48:45,328 [P17080/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
- 2017-02-09 09:48:45,559 [P17080/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
- 2017-02-09 09:48:45,607 [P17080/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 4121ms)
- 2017-02-09 09:48:48,259 [P17080/D2/T7] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:15534/umbraco (UmbracoModule request)
- 2017-02-09 09:48:49,245 [P17080/D2/T7] INFO  umbraco.content - Load Xml from file...
- 2017-02-09 09:48:49,291 [P17080/D2/T7] INFO  umbraco.content - Loaded Xml from file.
- 2017-02-09 09:48:50,678 [P17080/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
- 2017-02-09 09:48:50,680 [P17080/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 1ms)
- 2017-02-09 09:49:10,794 [P17080/D2/T15] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
- 2017-02-09 09:49:10,797 [P17080/D2/T15] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 2ms)
- 2017-02-09 09:49:10,853 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
- 2017-02-09 09:49:10,855 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 1ms)
- 2017-02-09 09:49:10,869 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
- 2017-02-09 09:49:10,870 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
- 2017-02-09 09:49:10,874 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
- 2017-02-09 09:49:10,874 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
- 2017-02-09 09:49:10,941 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
- 2017-02-09 09:49:10,943 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 2ms)
- 2017-02-09 09:49:12,079 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
- 2017-02-09 09:49:12,081 [P17080/D2/T10] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 2ms)
- 2017-02-09 09:49:49,417 [P17080/D2/T14] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-02-08 09:49:49
- 2017-02-09 09:50:53,283 [P17080/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Editors.IEditorValidator
- 2017-02-09 09:50:53,297 [P17080/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Editors.IEditorValidator, found 0 (took 13ms)
- 2017-02-09 09:50:53,551 [P17080/D2/T11] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
- 2017-02-09 09:50:53,553 [P17080/D2/T11] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 1ms)
- 2017-02-09 09:54:24,039 [P17080/D2/T33] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.HealthCheck.HealthCheck
- 2017-02-09 09:54:24,049 [P17080/D2/T33] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.HealthCheck.HealthCheck, found 0 (took 10ms)
- 2017-02-09 09:54:27,007 [P17080/D2/T32] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
- 2017-02-09 09:54:27,007 [P17080/D2/T32] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
- 2017-02-09 09:54:27,783 [P17080/D2/T33] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
- 2017-02-09 09:55:27,237 [P17080/D2/T11] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
- 2017-02-09 09:55:27,260 [P17080/D2/T11] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
- 2017-02-09 09:55:27,263 [P17080/D2/T11] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
- 2017-02-09 09:56:27,288 [P17080/D2/T23] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Search' with Id '0' has been published.
- 2017-02-09 09:56:31,920 [P17080/D2/T5] INFO  umbraco.content - Save Xml to file...
- 2017-02-09 09:56:31,925 [P17080/D2/T5] INFO  umbraco.content - Saved Xml to file.
- 2017-02-09 09:57:10,851 [P17080/D2/T33] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Search' with Id '1059' has been published.
- 2017-02-09 09:57:15,435 [P17080/D2/T32] INFO  umbraco.content - Save Xml to file...
- 2017-02-09 09:57:15,444 [P17080/D2/T32] INFO  umbraco.content - Saved Xml to file.
- 2017-02-09 09:59:08,131 [P17080/D2/T34] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
-System.InvalidOperationException: The template with Id 1058 does not exist, the page cannot render
-   at Umbraco.Web.Routing.PublishedContentRequestEngine.FindTemplate()
-   at Umbraco.Web.Routing.PublishedContentRequestEngine.FindPublishedContentAndTemplate()
-   at Umbraco.Web.Routing.PublishedContentRequestEngine.PrepareRequest()
-   at Umbraco.Web.UmbracoModule.ProcessRequest(HttpContextBase httpContext)
-   at Umbraco.Web.UmbracoModule.<Init>b__8(Object sender, EventArgs e)
-   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+﻿ 2017-02-10 02:07:42,763 [P20932/D2/T36] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-02-09 02:07:42
+ 2017-02-10 06:07:42,775 [P20932/D2/T36] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-02-09 06:07:42
+ 2017-02-10 09:26:53,414 [P20932/D2/T53] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username 784627606@qq.com from IP address ::1
+ 2017-02-10 09:26:53,414 [P20932/D2/T53] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: 784627606@qq.com logged in from IP address ::1
+ 2017-02-10 09:27:02,748 [P20932/D2/T18] WARN  Umbraco.Web.Mvc.RenderMvcController - No physical template file was found for template umbLayout
+ 2017-02-10 09:27:02,748 [P20932/D2/T18] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+System.Exception: No physical template file was found for template umbLayout
+   at Umbraco.Web.Mvc.RenderMvcController.CurrentTemplate[T](T model)
+   at Umbraco.Web.Mvc.RenderMvcController.Index(RenderModel model)
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
- 2017-02-09 09:59:37,487 [P17080/D2/T33] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Search' with Id '1059' has been unpublished.
- 2017-02-09 09:59:41,898 [P17080/D2/T32] INFO  umbraco.content - Save Xml to file...
- 2017-02-09 09:59:41,915 [P17080/D2/T32] INFO  umbraco.content - Saved Xml to file.
- 2017-02-09 10:00:09,138 [P17080/D2/T21] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Search' with Id '0' has been published.
- 2017-02-09 10:00:13,228 [P17080/D2/T32] INFO  umbraco.content - Save Xml to file...
- 2017-02-09 10:00:13,337 [P17080/D2/T32] INFO  umbraco.content - Saved Xml to file.
- 2017-02-09 10:18:54,311 [P17080/D2/T24] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: test@domain.com, IP Address: ::1
+ 2017-02-10 09:32:56,578 [P20932/D2/T16] INFO  umbraco.content - Save Xml to file...
+ 2017-02-10 09:32:56,613 [P20932/D2/T16] INFO  umbraco.content - Saved Xml to file.
+ 2017-02-10 09:35:09,808 [P20932/D2/T16] INFO  umbraco.content - Save Xml to file...
+ 2017-02-10 09:35:09,821 [P20932/D2/T16] INFO  umbraco.content - Saved Xml to file.

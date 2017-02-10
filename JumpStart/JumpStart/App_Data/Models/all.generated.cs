@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9b184069f4fd1f20")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "30fa4e207a2b902c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -40,16 +40,16 @@ using  Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Contact</summary>
-	[PublishedContentModel("umbContact")]
-	public partial class UmbContact : PublishedContentModel
+	/// <summary>Master</summary>
+	[PublishedContentModel("umbMaster")]
+	public partial class UmbMaster : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "umbContact";
+		public new const string ModelTypeAlias = "umbMaster";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public UmbContact(IPublishedContent content)
+		public UmbMaster(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -60,22 +60,13 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<UmbContact, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<UmbMaster, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Sub title
-		///</summary>
-		[ImplementPropertyType("subTitle")]
-		public string SubTitle
-		{
-			get { return this.GetPropertyValue<string>("subTitle"); }
-		}
-
-		///<summary>
-		/// Title
+		/// Page title: The page title overrules the name this page was given. So if the page name is "About us" the title could be "About Our Company Name".
 		///</summary>
 		[ImplementPropertyType("title")]
 		public string Title
@@ -84,71 +75,18 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Mail To Address: When someone fills out the contact form, where should their e-mail be sent?
+		/// Hide in navigation?: If set to "Yes", this page will be hidden from the navigation menu at the top.
 		///</summary>
-		[ImplementPropertyType("umbEmailTo")]
-		public string UmbEmailTo
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
 		{
-			get { return this.GetPropertyValue<string>("umbEmailTo"); }
-		}
-	}
-
-	/// <summary>Feature</summary>
-	[PublishedContentModel("umbFeature")]
-	public partial class UmbFeature : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "umbFeature";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public UmbFeature(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<UmbFeature, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Feature Header
-		///</summary>
-		[ImplementPropertyType("featureHeader")]
-		public string FeatureHeader
-		{
-			get { return this.GetPropertyValue<string>("featureHeader"); }
-		}
-
-		///<summary>
-		/// Feature Text
-		///</summary>
-		[ImplementPropertyType("featureText")]
-		public string FeatureText
-		{
-			get { return this.GetPropertyValue<string>("featureText"); }
-		}
-
-		///<summary>
-		/// Image
-		///</summary>
-		[ImplementPropertyType("image")]
-		public object Image
-		{
-			get { return this.GetPropertyValue("image"); }
+			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
 		}
 	}
 
 	/// <summary>Home</summary>
 	[PublishedContentModel("umbHomePage")]
-	public partial class UmbHomePage : PublishedContentModel
+	public partial class UmbHomePage : UmbMaster
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "umbHomePage";
@@ -172,12 +110,48 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// AboutText
+		///</summary>
+		[ImplementPropertyType("aboutText")]
+		public IHtmlString AboutText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("aboutText"); }
+		}
+
+		///<summary>
+		/// About Title
+		///</summary>
+		[ImplementPropertyType("aboutTitle")]
+		public string AboutTitle
+		{
+			get { return this.GetPropertyValue<string>("aboutTitle"); }
+		}
+
+		///<summary>
+		/// Banner background image
+		///</summary>
+		[ImplementPropertyType("bannerBackgroundImage")]
+		public object BannerBackgroundImage
+		{
+			get { return this.GetPropertyValue("bannerBackgroundImage"); }
+		}
+
+		///<summary>
 		/// Banner Header
 		///</summary>
 		[ImplementPropertyType("bannerHeader")]
 		public string BannerHeader
 		{
 			get { return this.GetPropertyValue<string>("bannerHeader"); }
+		}
+
+		///<summary>
+		/// Banner link
+		///</summary>
+		[ImplementPropertyType("bannerLink")]
+		public object BannerLink
+		{
+			get { return this.GetPropertyValue("bannerLink"); }
 		}
 
 		///<summary>
@@ -190,12 +164,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Banner Text
+		/// Banner Subheader
 		///</summary>
-		[ImplementPropertyType("bannerText")]
-		public IHtmlString BannerText
+		[ImplementPropertyType("bannerSubheader")]
+		public string BannerSubheader
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bannerText"); }
+			get { return this.GetPropertyValue<string>("bannerSubheader"); }
 		}
 
 		///<summary>
@@ -205,15 +179,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Byline
 		{
 			get { return this.GetPropertyValue<string>("byline"); }
-		}
-
-		///<summary>
-		/// Continue Button Text
-		///</summary>
-		[ImplementPropertyType("continueButtonText")]
-		public string ContinueButtonText
-		{
-			get { return this.GetPropertyValue<string>("continueButtonText"); }
 		}
 
 		///<summary>
@@ -271,12 +236,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Pinterest
+		/// Rss link
 		///</summary>
-		[ImplementPropertyType("pinterestLink")]
-		public string PinterestLink
+		[ImplementPropertyType("rssLink")]
+		public string RssLink
 		{
-			get { return this.GetPropertyValue<string>("pinterestLink"); }
+			get { return this.GetPropertyValue<string>("rssLink"); }
 		}
 
 		///<summary>
@@ -298,9 +263,97 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>TextPage</summary>
+	/// <summary>News Item</summary>
+	[PublishedContentModel("umbNewsItem")]
+	public partial class UmbNewsItem : UmbMaster
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "umbNewsItem";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public UmbNewsItem(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<UmbNewsItem, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Content
+		///</summary>
+		[ImplementPropertyType("bodyText")]
+		public IHtmlString BodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("bodyText"); }
+		}
+
+		///<summary>
+		/// Image
+		///</summary>
+		[ImplementPropertyType("image")]
+		public object Image
+		{
+			get { return this.GetPropertyValue("image"); }
+		}
+
+		///<summary>
+		/// Publish date: You can overrule the date shown on the site by changing it here. If you don't set a date explicitly here then the news item's create date will be shown.
+		///</summary>
+		[ImplementPropertyType("publishDate")]
+		public DateTime PublishDate
+		{
+			get { return this.GetPropertyValue<DateTime>("publishDate"); }
+		}
+
+		///<summary>
+		/// Subheader
+		///</summary>
+		[ImplementPropertyType("subheader")]
+		public string Subheader
+		{
+			get { return this.GetPropertyValue<string>("subheader"); }
+		}
+	}
+
+	/// <summary>News Overview</summary>
+	[PublishedContentModel("umbNewsOverview")]
+	public partial class UmbNewsOverview : UmbMaster
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "umbNewsOverview";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public UmbNewsOverview(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<UmbNewsOverview, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Text Page</summary>
 	[PublishedContentModel("umbTextPage")]
-	public partial class UmbTextPage : PublishedContentModel
+	public partial class UmbTextPage : UmbMaster
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "umbTextPage";
@@ -333,21 +386,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Sub title
+		/// Featured Page?: Is this a page that should be featured on the home page?
 		///</summary>
-		[ImplementPropertyType("subTitle")]
-		public string SubTitle
+		[ImplementPropertyType("featuredPage")]
+		public bool FeaturedPage
 		{
-			get { return this.GetPropertyValue<string>("subTitle"); }
+			get { return this.GetPropertyValue<bool>("featuredPage"); }
 		}
 
 		///<summary>
-		/// Title
+		/// Image
 		///</summary>
-		[ImplementPropertyType("title")]
-		public string Title
+		[ImplementPropertyType("image")]
+		public object Image
 		{
-			get { return this.GetPropertyValue<string>("title"); }
+			get { return this.GetPropertyValue("image"); }
 		}
 	}
 
@@ -374,6 +427,137 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Search, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>CustomMaster</summary>
+	[PublishedContentModel("customMaster")]
+	public partial class CustomMaster : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "customMaster";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public CustomMaster(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CustomMaster, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>CustomHomePage</summary>
+	[PublishedContentModel("customHomePage")]
+	public partial class CustomHomePage : CustomMaster
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "customHomePage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public CustomHomePage(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CustomHomePage, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Contact</summary>
+	[PublishedContentModel("contact")]
+	public partial class Contact : CustomMaster
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "contact";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Contact(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Contact, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>test1</summary>
+	[PublishedContentModel("test1")]
+	public partial class Test1 : CustomMaster
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "test1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Test1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Test1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Body Text: The main content of the page.
+		///</summary>
+		[ImplementPropertyType("bodyText")]
+		public IHtmlString BodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("bodyText"); }
+		}
+
+		///<summary>
+		/// footerText: Copyright notice for the footer.
+		///</summary>
+		[ImplementPropertyType("footerText")]
+		public string FooterText
+		{
+			get { return this.GetPropertyValue<string>("footerText"); }
+		}
+
+		///<summary>
+		/// Page Title: The main title of the page (e.g. Welcome to Widgets Ltd).
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return this.GetPropertyValue<string>("pageTitle"); }
 		}
 	}
 
