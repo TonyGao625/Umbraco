@@ -1,52 +1,153 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.CustomMaster>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-@{
-	Layout = null;
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Customer Order Mockup</title>
-<!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--&#91;if lt IE 9&#93;>
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Foss.maxcdn.com%2Fhtml5shiv%2F3.7.3%2Fhtml5shiv.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Foss.maxcdn.com%2Frespond%2F1.4.2%2Frespond.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
-<!&#91;endif&#93;-->
-</head>
-<body>
+    @using ContentModels = Umbraco.Web.PublishedContentModels;
+    @{
+    Layout = null;
+    }
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Customer Order Mockup</title>
+        <!-- Bootstrap -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--&#91;if lt IE 9&#93;>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Foss.maxcdn.com%2Fhtml5shiv%2F3.7.3%2Fhtml5shiv.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Foss.maxcdn.com%2Frespond%2F1.4.2%2Frespond.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
+        <!&#91;endif&#93;-->
+        <style>
+            #custom-search-input {
+                padding: 3px;
+                border: solid 1px #E4E4E4;
+                border-radius: 6px;
+                background-color: #fff;
+            }
 
-    <div class="container">
-        
-        @Html.Partial("Header")
-        @RenderBody()
-        <div class="container" style="border-top: 2px solid grey;margin-top:80px">
+                #custom-search-input input {
+                    border: 0;
+                    box-shadow: none;
+                }
+
+                #custom-search-input button {
+                    margin: 2px 0 0 0;
+                    background: none;
+                    box-shadow: none;
+                    border: 0;
+                    color: #666666;
+                    padding: 0 8px 0 10px;
+                    border-left: solid 1px #ccc;
+                }
+
+                    #custom-search-input button:hover {
+                        border: 0;
+                        box-shadow: none;
+                        border-left: solid 1px #ccc;
+                    }
+
+                #custom-search-input .glyphicon-search {
+                    font-size: 23px;
+                }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
             <div class="row">
-                <div class="12u">
-                    <!-- Contact -->
-                    <section>
-                        <h2 class="major"><span>Get in touch</span></h2>
-                        <ul class="contact">
-                            <li><a href="http://facebook.com/Umbraco" class="facebook">Facebook</a></li>
-                            <li><a href="http://twitter.com/UmbracoProject" class="twitter">Twitter</a></li>
-                            <li><a href="http://feeds.feedburner.com/umbracoblog" class="rss">RSS</a></li>
-                            <li><a href="https://google.com/+Umbraco" class="googleplus">Google+</a></li>
-                        </ul>
-                    </section>
-                    <!-- /Contact -->
+                <div class="pull-left"><h1>Logo</h1></div>
+                <div class="pull-right">
+
+                </div>
+            </div>
+            <div class="row" style="background-color:darkgray;">
+                <div class="col-lg-6">
+                    <ul class="nav nav-pills">
+                        <li role="presentation"><a href="#">Home</a></li>
+                        <li role="presentation"><a href="#">Products</a></li>
+                        <li role="presentation"><a href="#">Quotes</a></li>
+                        <li role="presentation"><a href="#">Orders</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-3">
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" class="form-control input-sm" placeholder="Search Products" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="button">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.12.4%2Fjquery.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Fmaxcdn.bootstrapcdn.com%2Fbootstrap%2F3.3.7%2Fjs%2Fbootstrap.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
-</body>
+
+        <div class="container" style="border-bottom:3px solid black;margin-top:30px">
+            <h3>Products</h3>
+        </div>
+        <div class="container">
+            <div class="row" style="margin-top:30px">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">Category 1</a>
+                        <a href="#" class="list-group-item">Category 2</a>
+                        <a href="#" class="list-group-item">Category 3</a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4">
+                         
+                            <div style='height: 200px; background-size: contain;background-repeat:no-repeat;background-position:center;background-image:url("../images/asp.net.png")' data-toggle="tooltip" ></div>
+                            <div><h4>10 2D CCD USB embedded Scanner</h4></div>
+                            <div><small>This is a scanner , easy and friendly ot use</small></div>
+                            <div style='height: 200px; background-size: contain;background-repeat:no-repeat;background-position:center;background-image:url("../images/asp.net.png")'></div>
+                            <div><h4>10 2D CCD USB embedded Scanner</h4></div>
+                            <div><small>This is a scanner , easy and friendly ot use</small></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style='height: 200px; background-size: contain;background-repeat:no-repeat;background-position:center;background-image:url("../images/136245DA32550-93615.jpg")'></div>
+                            <div><h4>10 2D CCD USB embedded Scanner</h4></div>
+                            <div><small>This is a scanner , easy and friendly ot use</small></div>
+                            <div style='height: 200px; background-size: contain;background-repeat:no-repeat;background-position:center;background-image:url("../images/136245DA32550-93615.jpg")'></div>
+                            <div><h4>10 2D CCD USB embedded Scanner</h4></div>
+                            <div><small>This is a scanner , easy and friendly ot use</small></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style='height: 200px; background-size: contain;background-repeat:no-repeat;background-position:center;background-image:url("../images/IMG_20150402_094910.jpg")'></div>
+                            <div><h4>10 2D CCD USB embedded Scanner</h4></div>
+                            <div><small>This is a scanner , easy and friendly ot use</small></div>
+                            <div style='height: 200px; background-size: contain;background-repeat:no-repeat;background-position:center;background-image:url("../images/136245DA32550-93615.jpg")'></div>
+                            <div><h4>10 2D CCD USB embedded Scanner</h4></div>
+                            <div><small>This is a scanner , easy and friendly ot use</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+        <div class="container" style="border-top:3px solid black;margin-top:30px">
+            <h3 style="font-style: italic;">Contact Us</h3>
+            <p> <span class="glyphicon glyphicon-map-marker"></span> Address: 1234 Perth City Australia</p><br />
+            <p>   <span class="glyphicon glyphicon-earphone"></span>  Phone:01234567890 </p><br />
+            <p> <span class="glyphicon glyphicon-envelope"></span>  Email:gapoqoiangn@datanet.com.au</p>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.12.4%2Fjquery.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22https%3A%2F%2Fmaxcdn.bootstrapcdn.com%2Fbootstrap%2F3.3.7%2Fjs%2Fbootstrap.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip({
+                    template: '<div class="tooltip" role="tooltip">gfgf<div class="tooltip-arrow">gsfdgsd</div><div class="tooltip-inner">zhend e ma </div></div>'
+                })
+            })
+        </script>
+    </body>
 </html>
